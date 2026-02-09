@@ -124,41 +124,6 @@ fn setup_menu(mut commands: Commands, textures: Res<TextureAssets>) {
                         },
                     ));
                 });
-            children
-                .spawn((
-                    Button,
-                    Node {
-                        width: Val::Px(170.0),
-                        height: Val::Px(50.0),
-                        justify_content: JustifyContent::SpaceAround,
-                        align_items: AlignItems::Center,
-                        padding: UiRect::all(Val::Px(5.)),
-                        ..default()
-                    },
-                    BackgroundColor(Color::NONE),
-                    ButtonColors {
-                        normal: Color::NONE,
-                        hovered: Color::linear_rgb(0.25, 0.25, 0.25),
-                    },
-                    OpenLink("https://github.com/NiklasEi/bevy_game_template"),
-                ))
-                .with_children(|parent| {
-                    parent.spawn((
-                        Text::new("Open source"),
-                        TextFont {
-                            font_size: 15.0,
-                            ..default()
-                        },
-                        TextColor(Color::linear_rgb(0.9, 0.9, 0.9)),
-                    ));
-                    parent.spawn((
-                        ImageNode::new(textures.github.clone()),
-                        Node {
-                            width: Val::Px(32.),
-                            ..default()
-                        },
-                    ));
-                });
         });
 }
 
